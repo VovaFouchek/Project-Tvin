@@ -1,42 +1,48 @@
-// Container
-.container {
-    max-width: ($containerWidth + $containerPadding) + px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 $containerSidePadding + px;
+// inner
+.inner {
+  max-width: ($innerWidth + $innerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $innerSidePadding + px;
 
-    @media (max-width: $breakpoint1450) {
-        max-width: 1200px;
-    }
+  @media (max-width: $breakpoint1440) {
+    max-width: 1236px;
+  }
 
-    @media (max-width: $breakpoint992) {
-        max-width: 970px;
-    }
+  @media (max-width: $breakpoint1024) {
+    max-width: 883px;
+  }
 
-    @media (max-width: $breakpoint768) {
-        max-width: 740px;
-    }
+  @media (max-width: $breakpoint768) {
+    max-width: 665px;
+  }
 
-    @media (max-width: $breakpoint480) {
-        max-width: none;
-    }
+  @media (max-width: $breakpoint600) {
+    max-width: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 // Body Locked
 body {
-    &.locked {
-        overflow: hidden;
-    }
+  font-family: $fontMain;
+
+  &.locked {
+    overflow: hidden;
+  }
 }
 
 // Animations
 // Fade
 @keyframes fade {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
