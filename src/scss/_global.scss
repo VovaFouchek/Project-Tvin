@@ -10,11 +10,11 @@
   }
 
   @media (max-width: $breakpoint1024) {
-    max-width: 883px;
+    // max-width: 883px;
   }
 
   @media (max-width: $breakpoint768) {
-    max-width: 665px;
+    // max-width: 665px;
   }
 
   @media (max-width: $breakpoint600) {
@@ -32,6 +32,30 @@ body {
 
   &.locked {
     overflow: hidden;
+  }
+}
+
+// Button
+.btn {
+  display: inline-block;
+  padding: 13px 36px;
+  border: 2px solid $btn;
+  border-radius: 38px;
+  background-color: $btn;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: $white;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: $white;
+    color: $primary;
+  }
+  @media (max-width: $breakpoint1235) {
+    padding: 12px 30px;
   }
 }
 
