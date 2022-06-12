@@ -7,6 +7,9 @@
   @media (max-width: $breakpoint768) {
     margin-top: 20px;
   }
+  @media (max-width: $breakpoint600) {
+    margin-top: 50px;
+  }
 
   .inner {
     gap: 70px;
@@ -150,7 +153,7 @@
         max-width: 400px;
       }
       @media (max-width: $breakpoint480) {
-        max-width: 350px;
+        max-width: 320px;
       }
     }
   }

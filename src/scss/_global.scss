@@ -8,13 +8,17 @@
   @media (max-width: $breakpoint1440) {
     max-width: 1236px;
   }
+  // custom
+  @media (max-width: $breakpoint1235) {
+    max-width: 960px;
+  }
 
   @media (max-width: $breakpoint1024) {
-    // max-width: 883px;
+    max-width: 950px;
   }
 
   @media (max-width: $breakpoint768) {
-    // max-width: 665px;
+    max-width: 688px;
   }
 
   @media (max-width: $breakpoint600) {
@@ -56,6 +60,46 @@ body {
   }
   @media (max-width: $breakpoint1235) {
     padding: 12px 30px;
+  }
+}
+
+// Text
+.main__title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 56px;
+  color: $primary;
+  text-align: center;
+  margin-bottom: 70px;
+
+  @media (max-width: $breakpoint1024) {
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: $breakpoint768) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: $breakpoint600) {
+    margin-bottom: 30px;
+  }
+}
+
+section {
+  margin-bottom: 170px;
+
+  @media (max-width: $breakpoint1024) {
+    margin-bottom: 150px;
+  }
+  @media (max-width: $breakpoint768) {
+    margin-bottom: 95px;
+  }
+  @media (max-width: $breakpoint600) {
+    margin-bottom: 60px;
   }
 }
 
