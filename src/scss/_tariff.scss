@@ -1,0 +1,272 @@
+.tariff {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: $breakpoint880) {
+      max-width: 777px;
+      margin: auto;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      row-gap: 50px;
+      column-gap: 40px;
+    }
+    @media (max-width: $breakpoint600) {
+      row-gap: 35px;
+    }
+
+    .item {
+      width: 100%;
+      max-width: 364px;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 25px 115px 25px;
+      border-radius: 25px;
+      box-shadow: 0px 4px 20px 5px rgba(255, 153, 153, 0.15);
+
+      @media (max-width: $breakpoint1235) {
+        max-width: 300px;
+        padding: 20px 15px 115px 15px;
+      }
+      @media (max-width: $breakpoint1024) {
+        max-width: 260px;
+        padding: 15px 15px 90px 15px;
+        min-height: 500px;
+      }
+      @media (max-width: $breakpoint600) {
+        max-width: 290px;
+        padding: 15px 15px 90px 15px;
+        min-height: 500px;
+      }
+
+      &:nth-child(2) {
+        border: 2px solid rgba(181, 74, 65, 0.3);
+      }
+
+      &:nth-child(3) {
+        border: 2px solid rgba(181, 74, 65, 0.7);
+      }
+
+      h3 {
+        position: relative;
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: $primary;
+        margin-bottom: 50px;
+
+        @media (max-width: $breakpoint1024) {
+          font-size: 17px;
+          line-height: 23px;
+        }
+
+        &::after {
+          content: '';
+          width: 256px;
+          height: 3px;
+          border-radius: 20px;
+          background: $check__tariff;
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+
+          @media (max-width: $breakpoint1024) {
+            width: 180px;
+          }
+        }
+      }
+
+      .icon__box {
+        position: relative;
+        max-width: 230px;
+        max-height: 230px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @media (max-width: $breakpoint1235) {
+          max-width: 200px;
+          max-height: 200px;
+        }
+        @media (max-width: $breakpoint1024) {
+          max-width: 160px;
+          max-height: 160px;
+          margin-bottom: 35px;
+        }
+
+        h4 {
+          font-family: $fontMain;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 55px;
+          color: #231f20;
+          margin-bottom: 5px;
+          line-height: 1;
+
+          @media (max-width: $breakpoint1024) {
+            font-size: 40px;
+          }
+        }
+
+        span {
+          font-family: 'Noto Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 1;
+          color: #231f20;
+        }
+
+        img {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      .content__box {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $breakpoint1235) {
+          gap: 10px;
+        }
+
+        .col__info {
+          max-width: 190px;
+
+          .wrap {
+            margin-bottom: 10px;
+
+            p {
+              display: inline;
+              font-family: 'Source Sans Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              color: $primary;
+              margin-left: 5px;
+
+              @media (max-width: $breakpoint1024) {
+                font-size: 13px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+
+        .col__price {
+          text-align: center;
+
+          h4 {
+            font-family: $fontMain;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 65px;
+            background: linear-gradient(90deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%);
+            background-clip: text;
+            color: transparent;
+
+            @media (max-width: $breakpoint1235) {
+              font-size: 50px;
+            }
+
+            @media (max-width: $breakpoint1024) {
+              font-size: 45px;
+            }
+          }
+
+          span {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            background: linear-gradient(90deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%);
+            background-clip: text;
+            color: transparent;
+
+            @media (max-width: $breakpoint1024) {
+              font-size: 14px;
+              line-height: 19px;
+            }
+          }
+        }
+      }
+
+      .btn {
+        width: fit-content;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        @media (max-width: $breakpoint1024) {
+          font-size: 15px;
+          line-height: 20px;
+          bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.col__info {
+  .box__checkmark {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    @media (max-width: $breakpoint1024) {
+      width: 15px;
+      height: 15px;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: $check__tariff;
+      border-radius: 6px;
+
+      @media (max-width: $breakpoint1024) {
+        width: 15px;
+        height: 15px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        inset: 0;
+        margin: auto;
+        width: 6px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 3.4px 3.3px 0;
+        transform: rotate(45deg);
+
+        @media (max-width: $breakpoint1024) {
+          width: 4px;
+          height: 7px;
+          border-width: 0 2.4px 2.3px 0;
+        }
+      }
+    }
+  }
+}

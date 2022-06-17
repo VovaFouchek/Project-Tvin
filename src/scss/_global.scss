@@ -8,9 +8,9 @@
   @media (max-width: $breakpoint1440) {
     max-width: 1236px;
   }
-  // custom
+
   @media (max-width: $breakpoint1235) {
-    max-width: 960px;
+    max-width: 1020px;
   }
 
   @media (max-width: $breakpoint1024) {
@@ -46,7 +46,7 @@ body {
   border: 2px solid $btn;
   border-radius: 38px;
   background-color: $btn;
-  font-family: 'Manrope';
+  font-family: $fontMain;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
