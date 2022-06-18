@@ -12,6 +12,9 @@ const swiper = new Swiper('.image-slider', {
   // Count preview slides
   slidesPerView: 2.5,
 
+  // Padding between the slider
+  spaceBetween: 40,
+
   // Active slide will be centered without adding gaps at the beginning and end of slider
   centeredSlides: true,
 
@@ -21,14 +24,11 @@ const swiper = new Swiper('.image-slider', {
   // Disabling functionality if there are fewer slides than needed
   watchOverflow: true,
 
-  // ??
+  // Accept mouse events like touch events (click and drag to change slides)
   simulateTouch: true,
 
   // "Grab" cursor, when hover on Swiper
   grabCursor: true,
-
-  // Padding between the slider
-  spaceBetween: 40,
 
   // Speed
   speed: 1000,
@@ -67,6 +67,14 @@ const swiper = new Swiper('.image-slider', {
           this.autoplay.start();
         });
       },
+    },
+
+    // Accessibility
+    a11y: {
+      enabled: true,
+      prevSlideMessage: 'Попередній слайд',
+      nextSlideMessage: 'Наступний слайд',
+      notificationClass: 'swiper-notification',
     },
   },
 });
