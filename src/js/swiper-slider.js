@@ -51,7 +51,7 @@ const swiper = new Swiper('.image-slider', {
       slidesPerView: 2.5,
       speed: 1300,
     },
-    320: {
+    0: {
       slidesPerView: 1,
       centeredSlides: false,
     },

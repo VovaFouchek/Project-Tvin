@@ -1,0 +1,96 @@
+.connect {
+  @media (max-width: $breakpoint480) {
+    padding: 0 10px;
+  }
+
+  .main__title {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 70px;
+    @media (max-width: $breakpoint1235) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $breakpoint1024) {
+      max-width: 444px;
+    }
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 40px;
+      max-width: 350px;
+    }
+    @media (max-width: $breakpoint600) {
+      margin-bottom: 30px;
+    }
+  }
+  .container {
+    background: url(../img/decor_line.svg) no-repeat center;
+    background-size: contain;
+    position: relative;
+
+    .item {
+      position: relative;
+      max-width: 510px;
+      height: 600px;
+      margin: auto;
+      padding: 75px 70px 0 70px;
+      border-radius: 25px;
+      text-align: center;
+      background: $white;
+      box-shadow: 0px 3px 30px 4px rgba(0, 0, 0, 0.07);
+
+      @media (max-width: $breakpoint1235) {
+        height: 420px;
+        max-width: 362px;
+        padding: 55px 50px 0 50px;
+      }
+      @media (max-width: $breakpoint768) {
+        height: 320px;
+        max-width: 300px;
+        padding: 45px 40px 0 40px;
+      }
+      @media (max-width: $breakpoint480) {
+        height: auto;
+        max-width: 300px;
+      }
+      @media (max-width: $breakpoint320) {
+        padding: 40px 35px 0 35px;
+      }
+
+      .btn {
+        font-size: 30px;
+        line-height: 41px;
+
+        @media (max-width: $breakpoint1235) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+        @media (max-width: $breakpoint768) {
+          font-size: 16px;
+          line-height: 22px;
+        }
+        @media (max-width: $breakpoint480) {
+          margin-bottom: 220px;
+        }
+        @media (max-width: $breakpoint320) {
+          font-size: 14px;
+        }
+      }
+
+      img {
+        position: absolute;
+        bottom: -56px;
+
+        @media (max-width: $breakpoint1235) {
+          max-width: 263px;
+          bottom: -40px;
+        }
+        @media (max-width: $breakpoint768) {
+          max-width: 220px;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -33px;
+        }
+      }
+    }
+  }
+}
