@@ -81,8 +81,8 @@
         }
 
         img {
+          display: inline-flex;
           margin: auto;
-          margin-bottom: 20px;
 
           @media (max-width: $breakpoint1024) {
             max-width: 65px;
@@ -95,7 +95,15 @@
           font-weight: 400;
           font-size: 20px;
           line-height: 27px;
-          color: #000000;
+          color: $black;
+
+          &:first-of-type {
+            margin-top: 20px;
+          }
+
+          a {
+            color: $black;
+          }
         }
 
         span {
@@ -105,6 +113,10 @@
           font-size: 16px;
           line-height: 20px;
           color: $primary;
+
+          a {
+            color: $primary;
+          }
         }
       }
     }
