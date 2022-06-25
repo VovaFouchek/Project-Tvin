@@ -37,7 +37,7 @@
       }
 
       h1 {
-        font-family: 'Montserrat';
+        font-family: $fontTitle;
         font-style: normal;
         font-weight: 700;
         font-size: 50px;
@@ -70,7 +70,7 @@
 
       p {
         max-width: 564px;
-        font-family: 'Source Sans Pro';
+        font-family: $fontRegularText;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;

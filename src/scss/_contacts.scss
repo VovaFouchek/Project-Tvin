@@ -1,0 +1,112 @@
+.contacts {
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint991) {
+      flex-wrap: wrap;
+    }
+
+    .col__arrow {
+      width: 100%;
+      max-width: 620px;
+      background: url(../img/arrow_contacts.svg) no-repeat;
+      background-position: center;
+
+      @media (max-width: $breakpoint1235) {
+        background-size: contain;
+        max-width: inherit;
+        margin-right: 2rem;
+      }
+      @media (max-width: $breakpoint991) {
+        background: none;
+        margin-right: 0;
+      }
+
+      h3 {
+        max-width: 400px;
+        font-family: $fontRegularText;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 50px;
+        color: $black;
+
+        @media (max-width: $breakpoint991) {
+          margin: auto;
+          margin-bottom: 40px;
+          text-align: center;
+          font-size: 34px;
+          line-height: 1.2;
+        }
+        @media (max-width: $breakpoint600) {
+          max-width: 222px;
+          font-size: 21px;
+          line-height: 26px;
+        }
+      }
+    }
+
+    .col__content {
+      width: 100%;
+      max-width: 590px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 60px;
+
+      @media (max-width: $breakpoint1235) {
+        gap: 35px;
+      }
+      @media (max-width: $breakpoint991) {
+        justify-content: center;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .item {
+        width: 100%;
+        max-width: 265px;
+        padding: 40px 30px;
+        text-align: center;
+        border-radius: 26px;
+        background: $white;
+        box-shadow: 0px 3px 25px 4px rgba(0, 0, 0, 0.07);
+
+        @media (max-width: $breakpoint1235) {
+          max-width: 205px;
+        }
+        @media (max-width: $breakpoint991) {
+          max-width: 250px;
+        }
+
+        img {
+          margin: auto;
+          margin-bottom: 20px;
+
+          @media (max-width: $breakpoint1024) {
+            max-width: 65px;
+          }
+        }
+
+        p {
+          font-family: $fontMain;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 27px;
+          color: #000000;
+        }
+
+        span {
+          font-family: $fontRegularText;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          color: $primary;
+        }
+      }
+    }
+  }
+}

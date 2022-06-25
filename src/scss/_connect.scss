@@ -7,16 +7,16 @@
     max-width: 600px;
     margin: auto;
     margin-bottom: 70px;
+
     @media (max-width: $breakpoint1235) {
       margin-bottom: 50px;
     }
-
     @media (max-width: $breakpoint1024) {
       max-width: 444px;
     }
     @media (max-width: $breakpoint768) {
-      margin-bottom: 40px;
       max-width: 350px;
+      margin-bottom: 40px;
     }
     @media (max-width: $breakpoint600) {
       margin-bottom: 30px;
@@ -87,8 +87,8 @@
         @media (max-width: $breakpoint768) {
           max-width: 220px;
           left: 50%;
-          transform: translateX(-50%);
           bottom: -33px;
+          transform: translateX(-50%);
         }
       }
     }

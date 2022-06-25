@@ -89,7 +89,7 @@
   // .menu__item-link
   &__item-link {
     position: relative;
-    font-family: 'Montserrat';
+    font-family: $fontTitle;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -291,7 +291,7 @@
 .nav__link {
   display: inline-flex;
   align-items: center;
-  font-family: 'Montserrat';
+  font-family: $fontTitle;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
