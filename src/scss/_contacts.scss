@@ -71,7 +71,9 @@
         text-align: center;
         border-radius: 26px;
         background: $white;
+        will-change: transform;
         box-shadow: 0px 3px 25px 4px rgba(0, 0, 0, 0.07);
+        transition: transform 0.2s;
 
         @media (max-width: $breakpoint1235) {
           max-width: 205px;
@@ -80,12 +82,17 @@
           max-width: 250px;
         }
 
+        &:hover {
+          transform: scale(1.04);
+        }
+
         img {
           display: inline-flex;
           margin: auto;
 
           @media (max-width: $breakpoint1024) {
             max-width: 65px;
+            height: auto;
           }
         }
 

@@ -12,23 +12,26 @@ footer {
     min-height: 370px;
   }
   @media (max-width: $breakpoint768) {
-    //min-height: 330px;
+    min-height: 330px;
     background: url(../img/background_footer_tablet.svg) no-repeat;
     background-size: cover;
   }
-
   @media (max-width: $breakpoint600) {
-    display: none;
+    min-height: 450px;
+    background: url(../img/background_footer_mobile.svg) no-repeat;
+    background-size: cover;
   }
 
   .elipse {
     width: 100%;
     height: 100%;
-    background: url(../img/elipse_contact.svg) no-repeat bottom;
+    background: url(../img/elipse_contact.svg) no-repeat;
+    background-position: bottom;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 
     @media (max-width: $breakpoint1024) {
       max-width: 450px;
@@ -40,12 +43,8 @@ footer {
   }
 
   .inner {
-    // position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // bottom: 0;
     padding-bottom: 40px;
-    // margin: auto;
+    z-index: 2;
 
     @media (max-width: $breakpoint1024) {
       padding-bottom: 20px;
@@ -53,10 +52,26 @@ footer {
     @media (max-width: $breakpoint768) {
       padding-bottom: 15px;
     }
+    @media (max-width: $breakpoint365) {
+      padding-top: 45px;
+      padding-bottom: 10px;
+    }
 
     .footer__container {
       display: flex;
       justify-content: space-between;
+
+      @media (max-width: $breakpoint600) {
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: $breakpoint365) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
 
       p,
       li,
@@ -79,6 +94,17 @@ footer {
         max-width: 200px;
         width: 100%;
 
+        @media (max-width: $breakpoint600) {
+          order: 1;
+        }
+        @media (max-width: $breakpoint425) {
+          max-width: 125px;
+        }
+        @media (max-width: $breakpoint365) {
+          margin-bottom: 25px;
+          text-align: center;
+        }
+
         ul {
           li {
             &:not(:last-of-type) {
@@ -87,6 +113,9 @@ footer {
               @media (max-width: $breakpoint1024) {
                 margin-bottom: 15px;
               }
+              @media (max-width: $breakpoint768) {
+                margin-bottom: 10px;
+              }
             }
 
             a {
@@ -94,15 +123,8 @@ footer {
               position: relative;
 
               &:before {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: -3px;
-                left: 0;
-                width: 0;
-                height: 2px;
+                @include underlinedLine;
                 background: $white;
-                transition: all 0.2s ease-in-out;
               }
 
               &:hover::before {
@@ -116,6 +138,10 @@ footer {
       .footer__contacts {
         max-width: 250px;
         width: 100%;
+
+        @media (max-width: $breakpoint600) {
+          order: 3;
+        }
 
         h4 {
           text-align: center;
@@ -136,6 +162,8 @@ footer {
           }
 
           img {
+            // need to delete
+            cursor: pointer;
             @media (max-width: $breakpoint1024) {
               max-width: 30px;
               height: auto;
@@ -147,6 +175,17 @@ footer {
       .footer__location {
         max-width: 200px;
         width: 100%;
+
+        @media (max-width: $breakpoint600) {
+          order: 2;
+        }
+        @media (max-width: $breakpoint425) {
+          max-width: 165px;
+        }
+        @media (max-width: $breakpoint365) {
+          margin-bottom: 25px;
+          text-align: center;
+        }
 
         h4 {
           text-align: right;
@@ -166,20 +205,41 @@ footer {
           @media (max-width: $breakpoint1024) {
             margin-bottom: 10px;
           }
+          @media (max-width: $breakpoint365) {
+            justify-content: center;
+          }
 
           .link__phone {
             margin-left: 10px;
+            position: relative;
+
+            &:before {
+              @include underlinedLine;
+              background: $white;
+              bottom: 1px;
+            }
+
+            &:hover::before {
+              width: 100%;
+            }
           }
         }
 
         .location {
           text-align: right;
 
+          @media (max-width: $breakpoint365) {
+            text-align: center;
+          }
+
           .link__location {
             font-size: 18px;
 
             @media (max-width: $breakpoint1024) {
               font-size: 14px;
+            }
+            @media (max-width: $breakpoint365) {
+              text-align: center;
             }
           }
         }
