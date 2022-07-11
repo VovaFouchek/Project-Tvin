@@ -116,6 +116,22 @@ section {
   transition: all 0.2s ease-in-out;
 }
 
+@mixin anchorForLink {
+  display: block;
+  content: '';
+  height: 120px;
+  margin: -120px 0 0;
+
+  @media (max-width: $breakpoint1024) {
+    height: 90px;
+    margin: -90px 0 0;
+  }
+  @media (max-width: $breakpoint768) {
+    height: 70px;
+    margin: -70px 0 0;
+  }
+}
+
 // Animations
 // Fade
 @keyframes fade {

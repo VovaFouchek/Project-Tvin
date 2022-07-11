@@ -1,4 +1,8 @@
 .contacts {
+  &:before {
+    @include anchorForLink;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,8 @@
 .connect {
+  &:before {
+    @include anchorForLink;
+  }
+
   @media (max-width: $breakpoint480) {
     padding: 0 10px;
   }

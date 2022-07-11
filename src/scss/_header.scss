@@ -56,6 +56,7 @@
       }
       @media (max-width: $breakpoint600) {
         display: block;
+        visibility: visible;
       }
 
       &::after {
@@ -116,6 +117,7 @@
 
 .burger {
   display: none;
+
   cursor: pointer;
 }
 
@@ -124,7 +126,7 @@
   // .menu
   .menu {
     position: fixed;
-    background: #131418;
+    background: #fff;
     left: 0;
     top: 0;
     width: 100vw;
@@ -141,7 +143,7 @@
       left: 0;
       top: 0;
       pointer-events: all;
-      z-index: 22;
+      z-index: -1;
       animation: fade 0.1s linear;
     }
   }
@@ -238,7 +240,44 @@
         gap: 35px;
       }
 
+      .pay {
+        position: relative;
+
+        &:before {
+          @include underlinedLine;
+          height: 1px;
+          background: $white;
+          bottom: -2px;
+        }
+
+        &:hover::before {
+          width: 100%;
+        }
+      }
+
       .technical__support {
+        &:hover {
+          span {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+
+        span {
+          position: relative;
+
+          &:before {
+            @include underlinedLine;
+            height: 1px;
+            background: $white;
+            bottom: -2px;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
         img {
           @media (max-width: $breakpoint1024) {
             max-width: 17px;
@@ -247,6 +286,25 @@
       }
 
       .private__cabinet {
+        &:hover {
+          span {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+
+        span {
+          position: relative;
+
+          &:before {
+            @include underlinedLine;
+            height: 1px;
+            background: $white;
+            bottom: -2px;
+          }
+        }
+
         img {
           @media (max-width: $breakpoint1024) {
             max-width: 24px;
@@ -254,6 +312,7 @@
         }
       }
     }
+
     .city__location {
       position: relative;
       padding: 5px 30px 5px 20px;

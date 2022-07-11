@@ -164,6 +164,11 @@ footer {
           img {
             // need to delete
             cursor: pointer;
+            transition: transform 0.2s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
             @media (max-width: $breakpoint1024) {
               max-width: 30px;
               height: auto;
@@ -207,6 +212,13 @@ footer {
           }
           @media (max-width: $breakpoint365) {
             justify-content: center;
+          }
+
+          .link__img {
+            transition: transform 0.2s;
+            &:hover {
+              transform: scale(1.1);
+            }
           }
 
           .link__phone {

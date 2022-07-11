@@ -1,4 +1,7 @@
 .about {
+  &:before {
+    @include anchorForLink;
+  }
   .inner {
     .container {
       display: flex;

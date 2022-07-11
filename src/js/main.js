@@ -5,11 +5,13 @@ function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
   const body = document.querySelector('body');
+  // const fixedNav = document.querySelector('fixed__nav');
 
   burger.addEventListener('click', () => {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
       burger.classList.add('active-burger');
+      // fixedNav.style.removeProperty('box-shadow');
       body.classList.add('locked');
     } else {
       menu.classList.remove('active');
@@ -36,6 +38,7 @@ getHeigthHeader();
 
 const fixedNav = () => {
   const nav = document.querySelector('nav');
+  const body = document.querySelector('body');
   if (window.scrollY >= breakpoint) {
     nav.classList.add('fixed__nav');
   } else {
