@@ -5,14 +5,21 @@ function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
   const body = document.querySelector('body');
-  // const fixedNav = document.querySelector('fixed__nav');
+  const menuItems = document.querySelectorAll('.menu__item-link');
 
   burger.addEventListener('click', () => {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
       burger.classList.add('active-burger');
-      // fixedNav.style.removeProperty('box-shadow');
       body.classList.add('locked');
+
+      for (const link of menuItems) {
+        link.addEventListener('click', () => {
+          menu.classList.remove('active');
+          burger.classList.remove('active-burger');
+          body.classList.remove('locked');
+        });
+      }
     } else {
       menu.classList.remove('active');
       burger.classList.remove('active-burger');

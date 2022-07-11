@@ -25,6 +25,9 @@
     }
 
     .logo {
+      @media (max-width: $breakpoint600) {
+        margin-right: 25px;
+      }
       img {
         @media (max-width: $breakpoint1024) {
           max-width: 80px;
@@ -104,6 +107,9 @@
     @media (max-width: $breakpoint768) {
       font-size: 13px;
     }
+    @media (max-width: $breakpoint600) {
+      font-size: 24px;
+    }
 
     &:before {
       @include underlinedLine;
@@ -138,12 +144,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 20px;
       width: 100vw;
       height: 100vh;
       left: 0;
       top: 0;
       pointer-events: all;
-      z-index: -1;
+      z-index: 5;
       animation: fade 0.1s linear;
     }
   }
@@ -210,11 +217,12 @@
   // .menu__item
   .menu__item {
     margin-top: 15px;
+    margin-left: 0;
   }
 
   // .menu__link
   .menu__item-link {
-    color: white;
+    color: $black;
   }
 }
 

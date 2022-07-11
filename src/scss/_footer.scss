@@ -65,6 +65,7 @@ footer {
         justify-content: space-evenly;
         margin-bottom: 20px;
         flex-wrap: wrap;
+        row-gap: 18px;
       }
       @media (max-width: $breakpoint365) {
         flex-direction: column;
@@ -162,7 +163,6 @@ footer {
           }
 
           img {
-            // need to delete
             cursor: pointer;
             transition: transform 0.2s;
 
