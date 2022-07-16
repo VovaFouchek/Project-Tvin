@@ -14,6 +14,7 @@
       @media (max-width: 768px) {
         flex-wrap: wrap;
       }
+
       &-item {
         margin: 0 25px;
         font-size: 25px;
@@ -251,6 +252,7 @@
           line-height: 20px;
           bottom: 20px;
           max-width: 200px;
+          min-width: 200px;
           width: 100%;
           text-align: center;
         }
