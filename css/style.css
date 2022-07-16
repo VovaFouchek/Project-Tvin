@@ -300,7 +300,7 @@ section {
   -webkit-box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
           box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
   padding: 24px;
-  border-radius: 6px;
+  border-radius: 12px;
   color: #303030;
   background: #fff;
   height: auto;
@@ -703,7 +703,10 @@ section {
 
 .advantages .inner .container .item .icon__box img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin: auto;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -934,7 +937,10 @@ section {
   content: "";
   position: absolute;
   display: block;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin: auto;
   width: 6px;
   height: 10px;
