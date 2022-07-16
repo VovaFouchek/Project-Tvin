@@ -12,6 +12,7 @@
   "license": "ISC",
   "homepage": "https://vovafouchek.github.io/Project-Tvin/",
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2"
   },
   "devDependencies": {
