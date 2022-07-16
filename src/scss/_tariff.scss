@@ -3,21 +3,50 @@
     @include anchorForLink;
   }
 
-  .container {
-    display: flex;
-    justify-content: space-between;
+  .tabs {
     width: 100%;
 
-    @media (max-width: $breakpoint880) {
-      max-width: 777px;
-      margin: auto;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      row-gap: 50px;
-      column-gap: 40px;
+    &__header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+      &-item {
+        margin: 0 25px;
+        font-size: 25px;
+        cursor: pointer;
+
+        &.active {
+          color: red;
+        }
+      }
     }
-    @media (max-width: $breakpoint600) {
-      row-gap: 35px;
+
+    &__content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: 20px;
+
+      &:last-child {
+        justify-content: center;
+        gap: 80px;
+      }
+
+      @media (max-width: $breakpoint880) {
+        max-width: 777px;
+        margin: auto;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 50px;
+        column-gap: 40px;
+      }
+      @media (max-width: $breakpoint600) {
+        row-gap: 35px;
+      }
     }
 
     .item {
@@ -38,12 +67,12 @@
       @media (max-width: $breakpoint1024) {
         max-width: 260px;
         padding: 15px 15px 90px 15px;
-        min-height: 500px;
+        min-height: 600px;
       }
       @media (max-width: $breakpoint600) {
         max-width: 290px;
         padding: 15px 15px 90px 15px;
-        min-height: 500px;
+        min-height: 580px;
       }
 
       &:nth-child(2) {
@@ -221,6 +250,9 @@
           font-size: 15px;
           line-height: 20px;
           bottom: 20px;
+          max-width: 200px;
+          width: 100%;
+          text-align: center;
         }
       }
     }
