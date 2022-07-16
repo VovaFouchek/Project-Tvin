@@ -4,11 +4,13 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
+    "deploy": "gh-pages -d built",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://vovafouchek.github.io/Project-Tvin/",
   "dependencies": {
     "gulp": "^4.0.2"
   },

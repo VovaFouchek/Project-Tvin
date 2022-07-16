@@ -40,7 +40,7 @@
         font-family: $fontTitle;
         font-style: normal;
         font-weight: 700;
-        font-size: 50px;
+        font-size: 48px;
         line-height: 61px;
         color: $primary;
         margin-top: 70px;
@@ -100,16 +100,15 @@
 
       .btns__container {
         display: inline-flex;
-        gap: 20px;
 
-        @media (max-width: $breakpoint425) {
-          gap: 15px;
-        }
         @media (max-width: $breakpoint375) {
           flex-direction: column;
         }
 
         .btn {
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
           @media (max-width: $breakpoint991) {
             padding: 11px 27px;
             border-radius: 22px;
@@ -129,6 +128,12 @@
             padding: 12px 25px;
             font-size: 14px;
             line-height: 1;
+          }
+          @media (max-width: $breakpoint375) {
+            &:not(:last-child) {
+              margin-right: 0;
+              margin-bottom: 15px;
+            }
           }
 
           &:last-child {

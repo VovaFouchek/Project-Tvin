@@ -143,3 +143,10 @@ section {
     opacity: 1;
   }
 }
+
+// For people, who turn off the animation on the website
+@media (prefers-reduced-motion) {
+  * {
+    transition: none;
+  }
+}
