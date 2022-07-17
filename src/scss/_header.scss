@@ -6,69 +6,80 @@
   background: $white;
   z-index: 50;
 
-  nav {
-    overflow: hidden;
-    transition: 0.2s;
-  }
+  .inner {
+    position: relative;
 
-  // Navbar
-
-  .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-
-    @media (max-width: $breakpoint1024) {
-      padding: 10px 0;
+    nav {
+      overflow: hidden;
+      transition: 0.2s;
     }
 
-    .logo {
-      img {
-        @media (max-width: $breakpoint1024) {
-          max-width: 80px;
-        }
-        @media (max-width: $breakpoint768) {
-          max-width: 60px;
-        }
-        @media (max-width: $breakpoint600) {
-          max-width: 70px;
-        }
-      }
-    }
+    // Navbar
 
-    .nav__link {
-      font-size: 12px;
-      line-height: 15px;
-      color: $primary;
-    }
-
-    .city__location-mobile {
-      display: none;
-      padding: 5px 30px 5px 20px;
-      border: 1px solid $primary;
-      border-radius: 9px;
-      position: relative;
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
 
       @media (max-width: $breakpoint1024) {
-        padding: 4px 25px 3px 15px;
-      }
-      @media (max-width: $breakpoint600) {
-        display: block;
-        visibility: visible;
+        padding: 10px 0;
       }
 
-      &::after {
-        content: '';
-        width: 11px;
-        height: 16px;
-        position: absolute;
-        right: 13px;
-        background: url(../img/arrow__dark.svg) no-repeat center;
+      .logo {
+        img {
+          @media (max-width: $breakpoint1024) {
+            max-width: 80px;
+          }
+          @media (max-width: $breakpoint768) {
+            max-width: 60px;
+          }
+          @media (max-width: $breakpoint600) {
+            max-width: 70px;
+          }
+        }
+      }
+
+      .nav__link {
+        font-size: 12px;
+        line-height: 15px;
+        color: $primary;
+      }
+
+      .city__location-mobile {
+        display: none;
+        padding: 5px 30px 5px 20px;
+        border: 1px solid $primary;
+        border-radius: 9px;
+        position: relative;
 
         @media (max-width: $breakpoint1024) {
-          right: 10px;
+          padding: 4px 25px 3px 15px;
+        }
+        @media (max-width: $breakpoint600) {
+          display: block;
+          visibility: visible;
+        }
+
+        &::after {
+          content: '';
+          width: 11px;
+          height: 16px;
+          position: absolute;
+          right: 13px;
+          background: url(../img/arrow__dark.svg) no-repeat center;
+          transition: transform 0.2s linear;
+
+          @media (max-width: $breakpoint1024) {
+            right: 10px;
+          }
+        }
+
+        &.active {
+          &::after {
+            transform: rotate(180deg);
+          }
         }
       }
     }
@@ -396,8 +407,8 @@
 .geo {
   // display: none;
   position: absolute;
-  top: 45px;
-  left: -24px;
+  top: 10px;
+  left: 10px;
   width: 380px;
   z-index: 60;
   box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
@@ -416,6 +427,12 @@
     visibility: visible;
     opacity: 1;
     transition: visibility ease 1s, opacity ease 0.2s;
+  }
+
+  @media (max-width: $breakpoint600) {
+    top: 65px;
+    left: 0;
+    width: 100%;
   }
 
   .main__title {
