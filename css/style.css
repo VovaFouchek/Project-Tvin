@@ -151,14 +151,18 @@ section {
   z-index: 50;
 }
 
-.header nav {
+.header .inner {
+  position: relative;
+}
+
+.header .inner nav {
   overflow: hidden;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
 }
 
-.header .navbar {
+.header .inner .navbar {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,13 +176,13 @@ section {
   padding: 14px 0;
 }
 
-.header .navbar .nav__link {
+.header .inner .navbar .nav__link {
   font-size: 12px;
   line-height: 15px;
   color: #424242;
 }
 
-.header .navbar .city__location-mobile {
+.header .inner .navbar .city__location-mobile {
   display: none;
   padding: 5px 30px 5px 20px;
   border: 1px solid #424242;
@@ -186,13 +190,24 @@ section {
   position: relative;
 }
 
-.header .navbar .city__location-mobile::after {
+.header .inner .navbar .city__location-mobile::after {
   content: "";
   width: 11px;
   height: 16px;
   position: absolute;
   right: 13px;
   background: url(../img/arrow__dark.svg) no-repeat center;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  -o-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.header .inner .navbar .city__location-mobile.active::after {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .menu {
@@ -402,8 +417,8 @@ section {
 
 .geo {
   position: absolute;
-  top: 45px;
-  left: -24px;
+  top: 10px;
+  left: 10px;
   width: 380px;
   z-index: 60;
   -webkit-box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
@@ -749,6 +764,9 @@ section {
 }
 
 .tariff .tabs__header {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,16 +774,35 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-box-shadow: inset 0px 3px 12px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 3px 12px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 70px;
 }
 
 .tariff .tabs__header-item {
-  margin: 0 25px;
+  width: 50%;
   font-size: 25px;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 70px;
   cursor: pointer;
 }
 
+.tariff .tabs__header-item:not(.active) {
+  border-radius: 70px;
+}
+
+.tariff .tabs__header-item:not(.active):hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #ffd2ce3e), to(#ffd3c755));
+  background: -o-linear-gradient(left, #ffd2ce3e 0, #ffd3c755 100%);
+  background: linear-gradient(90deg, #ffd2ce3e 0, #ffd3c755 100%);
+}
+
 .tariff .tabs__header-item.active {
-  color: red;
+  background: -webkit-gradient(linear, left top, right top, from(#ffd2ce), to(#ffd3c7));
+  background: -o-linear-gradient(left, #ffd2ce 0%, #ffd3c7 100%);
+  background: linear-gradient(90deg, #ffd2ce 0%, #ffd3c7 100%);
 }
 
 .tariff .tabs__content {
@@ -2387,19 +2424,19 @@ button.swiper-pagination-bullet {
     margin-bottom: 150px;
   }
 
-  .header .navbar {
+  .header .inner .navbar {
     padding: 10px 0;
   }
 
-  .header .navbar .logo img {
+  .header .inner .navbar .logo img {
     max-width: 80px;
   }
 
-  .header .navbar .city__location-mobile {
+  .header .inner .navbar .city__location-mobile {
     padding: 4px 25px 3px 15px;
   }
 
-  .header .navbar .city__location-mobile::after {
+  .header .inner .navbar .city__location-mobile::after {
     right: 10px;
   }
 
@@ -2700,7 +2737,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 95px;
   }
 
-  .header .navbar .logo img {
+  .header .inner .navbar .logo img {
     max-width: 60px;
   }
 
@@ -2760,8 +2797,11 @@ button.swiper-pagination-bullet {
   }
 
   .tariff .tabs__header {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    max-width: 300px;
+  }
+
+  .tariff .tabs__header-item {
+    font-size: 16px;
   }
 
   .news:before {
@@ -2841,11 +2881,11 @@ button.swiper-pagination-bullet {
     margin-bottom: 60px;
   }
 
-  .header .navbar .logo img {
+  .header .inner .navbar .logo img {
     max-width: 70px;
   }
 
-  .header .navbar .city__location-mobile {
+  .header .inner .navbar .city__location-mobile {
     display: block;
     visibility: visible;
   }
@@ -2856,6 +2896,12 @@ button.swiper-pagination-bullet {
 
   .secondary__header {
     display: none;
+  }
+
+  .geo {
+    top: 65px;
+    left: 0;
+    width: 100%;
   }
 
   .banner {

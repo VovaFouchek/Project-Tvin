@@ -37,18 +37,6 @@
             <div class="container">
                 <a href="#" class="nav__link city__location">Вінниця</a>
                 <a href="#" class="nav__link pay">Сплатити</a>
-                <section class="geo">
-                    <button type="button" class="geo__close"></button>
-                    <p class="main__title">Оберіть місто:</p>
-                    <div class="geo__content">
-                        <a href="#">Вінниця</a>
-                        <a href="#">Стрижівка</a>
-                        <a href="#">Калинівка</a>
-                    </div>
-                    <p class="choice">Вибір міста допоможе відображати актуальну інформацію про наявність послуг та цін
-                        у вашому
-                        місті.</p>
-                </section>
             </div>
             <div class="container">
                 <div class="technical__support">
@@ -68,9 +56,22 @@
     </div>
 </header>
 <header class="header">
-    <!-- Navbar -->
-    <nav class="nav" aria-label="main navigation">
-        <div class="inner">
+    <div class="inner">
+        <!-- Geolocation -->
+        <section class="geo">
+            <button type="button" class="geo__close"></button>
+            <p class="main__title">Оберіть місто:</p>
+            <div class="geo__content">
+                <a href="#">Вінниця</a>
+                <a href="#">Стрижівка</a>
+                <a href="#">Калинівка</a>
+            </div>
+            <p class="choice">Вибір міста допоможе відображати актуальну інформацію про наявність послуг та цін
+                у вашому
+                місті.</p>
+        </section>
+        <!-- Navbar -->
+        <nav class="nav" aria-label="main navigation">
             <div class="navbar">
                 <a href="#" class="nav__link city__location-mobile">Вінниця</a>
                 <div class="logo">
@@ -78,7 +79,6 @@
                         <img src="./img/logo__menu.svg" alt="Логотип Tvin">
                     </a>
                 </div>
-
                 <ul class="menu">
                     <li class="menu__item">
                         <a href="#connect" class="menu__item-link">Підключення</a>
@@ -103,8 +103,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 
     <!-- Main Page -->

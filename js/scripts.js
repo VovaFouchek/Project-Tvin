@@ -186,48 +186,55 @@ let readMoreLess = function () {
 readMoreLess();
 
 // Toogle menu
-const hamburger = document.querySelector('.city__location');
-const menu = document.querySelector('.geo');
-const closeBtn = document.querySelector('.geo__close');
+// const hamburger = document.querySelector('.city__location');
+// const hamburgerMobile = document.querySelector('.city__location-mobile');
+// const menu = document.querySelector('.geo');
+// const closeBtn = document.querySelector('.geo__close');
+// !
+// hamburgerMobile.addEventListener('click', e => {
+//   e.preventDefault();
+//   hamburgerMobile.classList.toggle('active');
+//   menu.classList.toggle('active');
+// });
+// !
+// function tooglePopUp() {
+//   const toggleMenu = () => {
+//     hamburger.classList.toggle('active');
+//     menu.classList.toggle('active');
+//   };
 
-function tooglePopUp() {
-  const toggleMenu = () => {
-    hamburger.classList.toggle('active');
-    menu.classList.toggle('active');
-  };
+//   hamburger.addEventListener('click', e => {
+//     e.stopPropagation();
+//     toggleMenu();
+//   });
 
-  hamburger.addEventListener('click', e => {
-    e.stopPropagation();
-    toggleMenu();
-  });
+//   closeBtn.addEventListener('click', e => {
+//     e.stopPropagation();
+//     toggleMenu();
+//   });
 
-  closeBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    toggleMenu();
-  });
+//   document.addEventListener('click', e => {
+//     let target = e.target;
+//     let itsMenu = target == menu || menu.contains(target);
+//     let itsHamburger = target == hamburger;
+//     let menuIsActive = menu.classList.contains('active');
 
-  document.addEventListener('click', e => {
-    let target = e.target;
-    let itsMenu = target == menu || menu.contains(target);
-    let itsHamburger = target == hamburger;
-    let menuIsActive = menu.classList.contains('active');
+//     if (!itsMenu && !itsHamburger && menuIsActive && closeBtn) {
+//       toggleMenu();
+//     }
+//   });
+// }
 
-    if (!itsMenu && !itsHamburger && menuIsActive && closeBtn) {
-      toggleMenu();
-    }
-  });
-}
+// tooglePopUp();
 
-tooglePopUp();
-
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  const isMenuContainClassActive = menu.classList.contains('active');
-  if (scrollY > 34 && isMenuContainClassActive) {
-    hamburger.classList.remove('active');
-    menu.classList.remove('active');
-  }
-});
+// window.addEventListener('scroll', () => {
+//   const scrollY = window.scrollY;
+//   const isMenuContainClassActive = menu.classList.contains('active');
+//   if (scrollY > 34 && isMenuContainClassActive) {
+//     hamburger.classList.remove('active');
+//     menu.classList.remove('active');
+//   }
+// });
 
 // Tabs in Tariff section
 
@@ -270,6 +277,56 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
 // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content', 'active');
+
+// Toogle menu
+
+function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
+  const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
+  const popUp = document.querySelector(popUpSelector);
+  const closePopUpBtn = document.querySelector(closePopUpBtnSelector);
+
+  const toggleMenu = () => {
+    hamburgerBtn.classList.toggle('active');
+    popUp.classList.toggle('active');
+  };
+
+  hamburgerBtn.addEventListener('click', e => {
+    // e.stopPropagation();
+    e.preventDefault();
+    toggleMenu();
+  });
+
+  closePopUpBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  document.addEventListener('click', e => {
+    const target = e.target;
+    const itsPopUp = target == popUp || popUp.contains(target);
+    const itsHamburgerBtn = target == hamburgerBtn;
+    const popUpIsActive = popUp.classList.contains('active');
+
+    if (!itsPopUp && !itsHamburgerBtn && popUpIsActive && closePopUpBtn) {
+      toggleMenu();
+    }
+  });
+  // window.addEventListener('scroll', )
+}
+
+if (window.screen.width > 600) {
+  tooglePopUp('.city__location', '.geo', '.geo__close');
+  // window.addEventListener('scroll', () => {
+  //   const scrollY = window.scrollY;
+  //   const ispopUpContainClassActive = popUp.classList.contains('active');
+  //   if (scrollY > 34 && ispopUpContainClassActive) {
+  //     hamburgerBtn.classList.remove('active');
+  //     popUp.classList.remove('active');
+  //   }
+  // });
+} else {
+  tooglePopUp('.city__location-mobile', '.geo', '.geo__close');
+}
 
 /**
  * Swiper 8.2.4
