@@ -1,5 +1,5 @@
 // Custom Scripts
-// Mobile menu burger
+// ! Mobile menu burger
 function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
@@ -36,27 +36,30 @@ function burgerMenu() {
 }
 burgerMenu();
 
-// Fixed nav
-let breakpoint = window.screen.width;
-const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
+// ! Fixed nav
 
-getHeigthHeader();
+function fixedHeaderFunc() {
+  let breakpoint = window.screen.width;
+  const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
 
-const fixedNav = () => {
-  const nav = document.querySelector('nav');
-  const body = document.querySelector('body');
-  if (window.scrollY >= breakpoint) {
-    nav.classList.add('fixed__nav');
-  } else {
-    nav.classList.remove('fixed__nav');
-  }
-};
+  getHeigthHeader();
 
-window.addEventListener('scroll', fixedNav);
-window.addEventListener('resize', getHeigthHeader);
+  const fixedHeader = () => {
+    const nav = document.querySelector('.header');
+    if (window.scrollY >= breakpoint) {
+      nav.classList.add('fixed');
+    } else {
+      nav.classList.remove('fixed');
+    }
+  };
 
-// Readmore
-let readMoreLess = function () {
+  window.addEventListener('scroll', fixedHeader);
+  window.addEventListener('resize', getHeigthHeader);
+}
+fixedHeaderFunc();
+
+// ! Readmore
+const readMoreLess = function () {
   if (!Element.prototype.closest) {
     if (!Element.prototype.matches) {
       Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
@@ -182,82 +185,30 @@ let readMoreLess = function () {
   let contentElements = document.querySelectorAll(settings.selectorContent);
   destroy(contentElements);
 };
-
 readMoreLess();
 
-// Toogle menu
-// const hamburger = document.querySelector('.city__location');
-// const hamburgerMobile = document.querySelector('.city__location-mobile');
-// const menu = document.querySelector('.geo');
-// const closeBtn = document.querySelector('.geo__close');
-// !
-// hamburgerMobile.addEventListener('click', e => {
-//   e.preventDefault();
-//   hamburgerMobile.classList.toggle('active');
-//   menu.classList.toggle('active');
-// });
-// !
-// function tooglePopUp() {
-//   const toggleMenu = () => {
-//     hamburger.classList.toggle('active');
-//     menu.classList.toggle('active');
-//   };
-
-//   hamburger.addEventListener('click', e => {
-//     e.stopPropagation();
-//     toggleMenu();
-//   });
-
-//   closeBtn.addEventListener('click', e => {
-//     e.stopPropagation();
-//     toggleMenu();
-//   });
-
-//   document.addEventListener('click', e => {
-//     let target = e.target;
-//     let itsMenu = target == menu || menu.contains(target);
-//     let itsHamburger = target == hamburger;
-//     let menuIsActive = menu.classList.contains('active');
-
-//     if (!itsMenu && !itsHamburger && menuIsActive && closeBtn) {
-//       toggleMenu();
-//     }
-//   });
-// }
-
-// tooglePopUp();
-
-// window.addEventListener('scroll', () => {
-//   const scrollY = window.scrollY;
-//   const isMenuContainClassActive = menu.classList.contains('active');
-//   if (scrollY > 34 && isMenuContainClassActive) {
-//     hamburger.classList.remove('active');
-//     menu.classList.remove('active');
-//   }
-// });
-
-// Tabs in Tariff section
+// ! Tabs in Tariff section
 
 function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'flex') {
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
     content = document.querySelectorAll(contentSelector);
+
   function hideTabContent() {
-    content.forEach(item => {
-      item.style.display = 'none';
-    });
-    tab.forEach(item => {
-      item.classList.remove(activeClass);
-    });
+    content.forEach(item => (item.style.display = 'none'));
+    tab.forEach(item => item.classList.remove(activeClass));
   }
+
   function showTabContent(i = 0) {
     content[i].style.display = display;
     tab[i].classList.add(activeClass);
   }
+
   hideTabContent();
   showTabContent();
-  header.addEventListener('click', e => {
-    const target = e.target;
+
+  header.addEventListener('click', event => {
+    const target = event.target;
     if (
       target.classList.contains(tabSelector.replace(/\./, '')) ||
       target.parentNode.classList.contains(tabSelector.replace(/\./, ''))
@@ -272,60 +223,77 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
   });
 }
 
-// ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
-// ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
-// ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
-// ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
+// FIRST argument is the class of our entire tab header.
+// SECOND argument - the class of a specific element, when clicked, the tab will switch.
+// THIRD argument is the class of the block that will be switched.
+// FOURTH argument is the activity class that will be added for the currently active tab.
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content', 'active');
 
-// Toogle menu
+// ! Toogle menu
 
 function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);
   const closePopUpBtn = document.querySelector(closePopUpBtnSelector);
 
+  const onScrollCloseModal = () => {
+    const scrollY = window.scrollY;
+    const ispopUpContainClassActive = popUp.classList.contains('active');
+    if (scrollY > 34 && ispopUpContainClassActive) {
+      hamburgerBtn.classList.remove('active');
+      popUp.classList.remove('active');
+    }
+  };
+
   const toggleMenu = () => {
     hamburgerBtn.classList.toggle('active');
     popUp.classList.toggle('active');
   };
 
-  hamburgerBtn.addEventListener('click', e => {
-    // e.stopPropagation();
-    e.preventDefault();
+  hamburgerBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    event.preventDefault();
+    window.addEventListener('scroll', onScrollCloseModal);
+
+    const popUpIsActive = popUp.classList.contains('active');
+    const toggles = document.querySelectorAll('.toggle');
+    const popUps = document.querySelectorAll('.popUp');
+
+    if (!popUpIsActive) {
+      toggles.forEach(toggle => toggle.classList.remove('active'));
+      popUps.forEach(popUp => popUp.classList.remove('active'));
+    }
+
     toggleMenu();
   });
 
-  closePopUpBtn.addEventListener('click', e => {
-    e.stopPropagation();
+  closePopUpBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    event.preventDefault();
     toggleMenu();
+    window.removeEventListener('scroll', onScrollCloseModal);
+    // remove closePopUpBtn ???
   });
 
-  document.addEventListener('click', e => {
-    const target = e.target;
+  document.addEventListener('click', event => {
+    const target = event.target;
     const itsPopUp = target == popUp || popUp.contains(target);
     const itsHamburgerBtn = target == hamburgerBtn;
     const popUpIsActive = popUp.classList.contains('active');
 
     if (!itsPopUp && !itsHamburgerBtn && popUpIsActive && closePopUpBtn) {
       toggleMenu();
+      window.removeEventListener('scroll', onScrollCloseModal);
     }
   });
-  // window.addEventListener('scroll', )
 }
 
 if (window.screen.width > 600) {
   tooglePopUp('.city__location', '.geo', '.geo__close');
-  // window.addEventListener('scroll', () => {
-  //   const scrollY = window.scrollY;
-  //   const ispopUpContainClassActive = popUp.classList.contains('active');
-  //   if (scrollY > 34 && ispopUpContainClassActive) {
-  //     hamburgerBtn.classList.remove('active');
-  //     popUp.classList.remove('active');
-  //   }
-  // });
+  tooglePopUp('.technical__support', '.support', '.support__close');
 } else {
   tooglePopUp('.city__location-mobile', '.geo', '.geo__close');
+  tooglePopUp('.technical__support-mobile', '.support', '.support__close');
 }
 
 /**
