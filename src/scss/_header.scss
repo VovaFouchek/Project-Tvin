@@ -6,6 +6,10 @@
   background: $white;
   z-index: 50;
 
+  &.fixed {
+    box-shadow: 0px 5px 40px rgb(37 37 37 / 5%);
+  }
+
   .inner {
     position: relative;
 
@@ -130,6 +134,7 @@
 }
 
 .small__container {
+  display: none;
   .burger {
     display: none;
     cursor: pointer;
@@ -400,27 +405,81 @@
   }
 }
 
-.fixed__nav {
-  box-shadow: 0px 5px 40px rgb(37 37 37 / 5%);
-}
-
-.geo {
+.popUp {
   // display: none;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 380px;
   z-index: 60;
-  box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
   padding: 24px;
   border-radius: 12px;
+  opacity: 0;
   color: #303030;
   background: #fff;
-  height: auto;
-  opacity: 0;
   visibility: hidden;
+  box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
   transition: visibility ease 1s, opacity ease 0.2s;
-  flex-direction: column;
+
+  @media (max-width: $breakpoint1024) {
+    max-width: 350px;
+  }
+
+  &.support {
+    left: inherit;
+    right: 10px;
+
+    @media (max-width: $breakpoint600) {
+      right: 0;
+    }
+
+    .popUp__content {
+      .container__phone {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 10px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: $breakpoint1024) {
+          margin-bottom: 5px;
+        }
+      }
+
+      .contact__us {
+        margin-top: 10px;
+
+        .main__title {
+          margin-top: 0px;
+          margin-bottom: 15px;
+        }
+
+        .social__media {
+          display: flex;
+          justify-content: space-between;
+          max-width: 280px;
+
+          a {
+            margin: 0 7px;
+
+            img {
+              cursor: pointer;
+              transition: transform 0.2s;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   &.active {
     display: flex;
@@ -430,19 +489,24 @@
   }
 
   @media (max-width: $breakpoint600) {
-    top: 65px;
+    top: 58px;
     left: 0;
     width: 100%;
+    max-width: inherit;
   }
 
   .main__title {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 32px;
     margin-top: 10px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+
+    @media (max-width: $breakpoint1024) {
+      font-size: 22px;
+    }
   }
 
-  .geo__close {
+  .popUp__close {
     position: absolute;
     top: 17px;
     right: 17px;
@@ -473,7 +537,7 @@
     }
   }
 
-  .geo__content {
+  .popUp__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -487,7 +551,10 @@
       color: $primary;
 
       &:not(:last-child) {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: $breakpoint1024) {
+        font-size: 22px;
       }
     }
   }
