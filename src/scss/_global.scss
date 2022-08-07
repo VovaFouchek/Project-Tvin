@@ -61,6 +61,9 @@ body {
   @media (max-width: $breakpoint1235) {
     padding: 12px 30px;
   }
+  @media (max-width: $breakpoint425) {
+    font-size: 18px;
+  }
 }
 
 // Text
@@ -80,7 +83,7 @@ body {
     margin-bottom: 50px;
   }
   @media (max-width: $breakpoint768) {
-    font-size: 24px;
+    font-size: 29px;
     line-height: 29px;
     margin-bottom: 40px;
   }

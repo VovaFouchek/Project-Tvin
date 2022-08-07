@@ -169,9 +169,16 @@ footer {
             &:hover {
               transform: scale(1.1);
             }
+
             @media (max-width: $breakpoint1024) {
               max-width: 30px;
               height: auto;
+            }
+            @media (max-width: $breakpoint768) {
+              max-width: 35px;
+            }
+            @media (max-width: $breakpoint600) {
+              max-width: 40px;
             }
           }
         }
@@ -248,7 +255,7 @@ footer {
             font-size: 18px;
 
             @media (max-width: $breakpoint1024) {
-              font-size: 14px;
+              font-size: 15px;
             }
             @media (max-width: $breakpoint365) {
               text-align: center;

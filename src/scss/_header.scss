@@ -5,6 +5,7 @@
   top: 0;
   background: $white;
   z-index: 50;
+  transition: 0.2s;
 
   &.fixed {
     box-shadow: 0px 5px 40px rgb(37 37 37 / 5%);
@@ -13,44 +14,24 @@
   .inner {
     position: relative;
 
-    nav {
-      overflow: hidden;
-      transition: 0.2s;
-    }
-
-    // Navbar
-
-    .navbar {
+    .header__menu {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 14px 0;
 
-      @media (max-width: $breakpoint1024) {
-        padding: 10px 0;
+      @media (max-width: $breakpoint600) {
+        padding: 5px 0 10px 0;
       }
 
-      .logo {
-        img {
-          @media (max-width: $breakpoint1024) {
-            max-width: 80px;
-          }
-          @media (max-width: $breakpoint768) {
-            max-width: 60px;
-          }
-          @media (max-width: $breakpoint600) {
-            max-width: 70px;
-          }
-        }
-      }
-
+      // todo rename
       .nav__link {
-        font-size: 12px;
+        font-size: 15px;
         line-height: 15px;
         color: $primary;
       }
-
+      // todo rename
       .city__location-mobile {
         display: none;
         padding: 5px 30px 5px 20px;
@@ -64,6 +45,7 @@
         @media (max-width: $breakpoint600) {
           display: block;
           visibility: visible;
+          margin-top: 12px;
         }
 
         &::after {
@@ -86,55 +68,94 @@
           }
         }
       }
-    }
-  }
-}
 
-.menu {
-  display: flex;
+      .header__logo {
+        @media (max-width: $breakpoint1024) {
+          max-width: 80px;
+        }
+        @media (max-width: $breakpoint768) {
+          max-width: 60px;
+        }
+        @media (max-width: $breakpoint600) {
+          max-width: 70px;
+        }
+      }
 
-  // .menu__item
-  &__item {
-    margin-left: 60px;
+      .menu__list {
+        display: flex;
 
-    @media (max-width: $breakpoint1024) {
-      margin-left: 40px;
-    }
-  }
+        @media (max-width: $burgerBreakpoint) {
+          position: fixed;
+          background: #fff;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          display: none;
 
-  // .menu__item-link
-  &__item-link {
-    position: relative;
-    font-family: $fontTitle;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    color: $primary;
+          &.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100vw;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            pointer-events: all;
+            z-index: 5;
+            animation: fade 0.1s linear;
+          }
+        }
+      }
 
-    @media (max-width: $breakpoint1024) {
-      font-size: 15px;
-      line-height: 16px;
-    }
-    @media (max-width: $breakpoint768) {
-      font-size: 13px;
-    }
-    @media (max-width: $breakpoint600) {
-      font-size: 24px;
-    }
+      .menu__item {
+        margin-left: 60px;
 
-    &:before {
-      @include underlinedLine;
-    }
+        @media (max-width: $breakpoint1024) {
+          margin-left: 35px;
+        }
+        @media (max-width: $breakpoint768) {
+          margin-left: 30px;
+        }
 
-    &:hover::before {
-      width: 100%;
+        &-link {
+          position: relative;
+          font-family: $fontTitle;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: $primary;
+
+          @media (max-width: $breakpoint1024) {
+            font-size: 17px;
+            line-height: 16px;
+          }
+          @media (max-width: $breakpoint768) {
+            font-size: 15px;
+          }
+          @media (max-width: $breakpoint600) {
+            font-size: 24px;
+          }
+
+          &:before {
+            @include underlinedLine;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
 
 .small__container {
   display: none;
+
   .burger {
     display: none;
     cursor: pointer;
@@ -147,34 +168,15 @@
 
 // Burger menu styles
 @media screen and (max-width: $burgerBreakpoint) {
-  // .menu
-  .menu {
-    position: fixed;
-    background: #fff;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-
-    &.active {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      width: 100vw;
-      height: 100vh;
-      left: 0;
-      top: 0;
-      pointer-events: all;
-      z-index: 5;
-      animation: fade 0.1s linear;
-    }
-  }
   .small__container {
     display: flex;
+    margin-top: 12px;
 
+    img {
+      display: block;
+      margin-right: 25px;
+      transform: scale(1.3);
+    }
     // .burger
     .burger {
       display: block;
@@ -233,20 +235,13 @@
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
       }
     }
-    img {
-      display: block;
-      margin-right: 25px;
-      transform: scale(1.3);
-    }
   }
 
-  // .menu__item
   .menu__item {
     margin-top: 15px;
     margin-left: 0;
   }
 
-  // .menu__link
   .menu__item-link {
     color: $black;
   }
@@ -254,6 +249,7 @@
 
 .secondary__header {
   background-color: $dark;
+  margin-bottom: 0;
 
   @media (max-width: $breakpoint600) {
     display: none;
@@ -265,7 +261,7 @@
     align-items: center;
     padding: 5px 0;
 
-    .container {
+    &__container {
       gap: 60px;
       display: flex;
       align-items: center;
@@ -290,7 +286,7 @@
         }
       }
 
-      .technical__support {
+      .selection__panel {
         &:hover {
           span {
             &::before {
@@ -313,6 +309,7 @@
             width: 100%;
           }
         }
+
         img {
           @media (max-width: $breakpoint1024) {
             max-width: 17px;
@@ -321,25 +318,6 @@
       }
 
       .private__cabinet {
-        &:hover {
-          span {
-            &::before {
-              width: 100%;
-            }
-          }
-        }
-
-        span {
-          position: relative;
-
-          &:before {
-            @include underlinedLine;
-            height: 1px;
-            background: $white;
-            bottom: -2px;
-          }
-        }
-
         img {
           @media (max-width: $breakpoint1024) {
             max-width: 24px;
@@ -392,7 +370,7 @@
   color: $white;
 
   @media (max-width: $breakpoint1024) {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
   }
 
@@ -430,7 +408,7 @@
 
   &.support {
     left: inherit;
-    right: 10px;
+    right: 90px;
 
     @media (max-width: $breakpoint600) {
       right: 0;
@@ -439,8 +417,37 @@
     .popUp__content {
       .container__phone {
         display: flex;
+        align-items: center;
         gap: 15px;
         margin-bottom: 10px;
+
+        .link__phone {
+          position: relative;
+          font-family: $fontRegularText;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 30px;
+          color: $primary;
+
+          &:before {
+            @include underlinedLine;
+            bottom: -1px;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
+
+        img {
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
 
         &:last-of-type {
           margin-bottom: 0;
@@ -489,7 +496,7 @@
   }
 
   @media (max-width: $breakpoint600) {
-    top: 58px;
+    top: 54px;
     left: 0;
     width: 100%;
     max-width: inherit;
@@ -542,24 +549,36 @@
     flex-direction: column;
     align-items: center;
 
-    a {
+    .link {
       font-family: $fontRegularText;
       font-style: normal;
       font-weight: 400;
       font-size: 24px;
       line-height: 30px;
       color: $primary;
+      position: relative;
+
+      &:before {
+        @include underlinedLine;
+        bottom: -1px;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
 
       &:not(:last-child) {
         margin-bottom: 10px;
       }
+
       @media (max-width: $breakpoint1024) {
         font-size: 22px;
       }
     }
   }
+
   .choice {
-    font-size: 14px;
+    font-size: 15px;
     color: #929292;
     text-align: center;
     margin-top: 20px;

@@ -5,9 +5,6 @@
     margin-top: 50px;
   }
   @media (max-width: $breakpoint768) {
-    margin-top: 20px;
-  }
-  @media (max-width: $breakpoint600) {
     margin-top: 50px;
   }
 
@@ -19,7 +16,7 @@
     @media (max-width: $breakpoint1235) {
       gap: 40px;
     }
-    @media (max-width: $breakpoint600) {
+    @media (max-width: $breakpoint768) {
       flex-direction: column;
       align-items: center;
     }
@@ -31,7 +28,7 @@
       @media (max-width: $breakpoint1235) {
         max-width: 50%;
       }
-      @media (max-width: $breakpoint600) {
+      @media (max-width: $breakpoint768) {
         max-width: 100%;
         text-align: center;
       }
@@ -87,10 +84,8 @@
           max-width: 420px;
         }
         @media (max-width: $breakpoint768) {
-          margin-bottom: 40px;
-        }
-        @media (max-width: $breakpoint600) {
           max-width: 100%;
+          margin-bottom: 40px;
         }
         @media (max-width: $breakpoint480) {
           font-size: 18px;
@@ -101,7 +96,7 @@
       .btns__container {
         display: inline-flex;
 
-        @media (max-width: $breakpoint375) {
+        @media (max-width: $breakpoint425) {
           flex-direction: column;
         }
 
@@ -116,23 +111,18 @@
             line-height: 15px;
           }
           @media (max-width: $breakpoint768) {
-            padding: 9px 21px;
-            font-size: 11px;
-          }
-          @media (max-width: $breakpoint600) {
             padding: 12px 30px;
             font-size: 16px;
             line-height: 22px;
           }
           @media (max-width: $breakpoint425) {
-            padding: 12px 25px;
-            font-size: 14px;
+            padding: 14px 25px;
+            font-size: 18px;
             line-height: 1;
-          }
-          @media (max-width: $breakpoint375) {
+
             &:not(:last-child) {
               margin-right: 0;
-              margin-bottom: 15px;
+              margin-bottom: 20px;
             }
           }
 
@@ -154,7 +144,7 @@
         display: flex;
         align-items: center;
       }
-      @media (max-width: $breakpoint600) {
+      @media (max-width: $breakpoint768) {
         max-width: 400px;
       }
       @media (max-width: $breakpoint480) {

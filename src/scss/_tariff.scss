@@ -7,15 +7,15 @@
     width: 100%;
 
     &__header {
-      max-width: 500px;
-      margin: 0 auto;
       width: 100%;
+      max-width: 500px;
       display: flex;
       justify-content: center;
+      margin: 0 auto;
       margin-bottom: 50px;
+      border-radius: 70px;
       background: rgba(255, 255, 255, 0.62);
       box-shadow: inset 0px 3px 12px 1px rgba(0, 0, 0, 0.1);
-      border-radius: 70px;
 
       @media (max-width: $breakpoint768) {
         max-width: 300px;
@@ -23,10 +23,10 @@
 
       &-item {
         width: 50%;
-        font-size: 25px;
         padding: 15px 0;
         text-align: center;
         border-radius: 70px;
+        font-size: 25px;
         cursor: pointer;
 
         @media (max-width: $breakpoint768) {
@@ -48,8 +48,8 @@
     }
 
     &__content {
-      display: flex;
       width: 100%;
+      display: flex;
       justify-content: space-between;
       gap: 20px;
 
@@ -60,9 +60,9 @@
 
       @media (max-width: $breakpoint880) {
         max-width: 777px;
-        margin: auto;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin: auto;
         row-gap: 50px;
         column-gap: 40px;
       }
@@ -74,7 +74,7 @@
     .item {
       width: 100%;
       max-width: 364px;
-      min-height: 700px;
+      min-height: 750px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -87,14 +87,13 @@
         padding: 20px 15px 115px 15px;
       }
       @media (max-width: $breakpoint1024) {
-        max-width: 260px;
+        max-width: 280px;
         padding: 15px 15px 90px 15px;
-        min-height: 600px;
+        min-height: 610px;
       }
       @media (max-width: $breakpoint600) {
         max-width: 290px;
         padding: 15px 15px 90px 15px;
-        min-height: 580px;
       }
 
       &:nth-child(2) {
@@ -208,14 +207,14 @@
               font-family: $fontRegularText;
               font-style: normal;
               font-weight: 400;
-              font-size: 16px;
+              font-size: 18px;
               line-height: 20px;
               color: $primary;
               margin-left: 5px;
 
               @media (max-width: $breakpoint1024) {
-                font-size: 13px;
-                line-height: 16px;
+                font-size: 16px;
+                line-height: 19px;
               }
             }
           }
@@ -228,7 +227,7 @@
             font-family: $fontMain;
             font-style: normal;
             font-weight: 400;
-            font-size: 65px;
+            font-size: 58px;
             background: linear-gradient(90deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%);
             background-clip: text;
             color: transparent;
@@ -253,7 +252,7 @@
             color: transparent;
 
             @media (max-width: $breakpoint1024) {
-              font-size: 14px;
+              font-size: 16px;
               line-height: 19px;
             }
           }
@@ -269,9 +268,12 @@
         margin: auto;
 
         @media (max-width: $breakpoint1024) {
-          font-size: 15px;
+          font-size: 16px;
           line-height: 20px;
           bottom: 20px;
+        }
+        @media (max-width: $breakpoint425) {
+          font-size: 18px;
         }
       }
     }
