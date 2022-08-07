@@ -2,7 +2,7 @@
 // ! Mobile menu burger
 function burgerMenu() {
   const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.menu');
+  const menu = document.querySelector('.menu__list');
   const body = document.querySelector('body');
   const menuItems = document.querySelectorAll('.menu__item-link');
 
@@ -272,7 +272,6 @@ function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector)
     event.preventDefault();
     toggleMenu();
     window.removeEventListener('scroll', onScrollCloseModal);
-    // remove closePopUpBtn ???
   });
 
   document.addEventListener('click', event => {
