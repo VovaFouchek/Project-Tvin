@@ -113,11 +113,22 @@
       .menu__item {
         margin-left: 60px;
 
+        &.mobile {
+          display: none;
+
+          @media (max-width: $breakpoint600) {
+            display: block;
+          }
+        }
+
         @media (max-width: $breakpoint1024) {
           margin-left: 35px;
         }
         @media (max-width: $breakpoint768) {
           margin-left: 30px;
+        }
+        @media (max-width: $breakpoint600) {
+          margin-left: 0px;
         }
 
         &-link {
@@ -406,6 +417,10 @@
     max-width: 350px;
   }
 
+  @media (max-width: $breakpoint600) {
+    transition: none;
+  }
+
   &.support {
     left: inherit;
     right: 90px;
@@ -493,6 +508,10 @@
     visibility: visible;
     opacity: 1;
     transition: visibility ease 1s, opacity ease 0.2s;
+
+    @media (max-width: $breakpoint600) {
+      transition: none;
+    }
   }
 
   @media (max-width: $breakpoint600) {
