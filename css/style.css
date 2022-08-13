@@ -2637,7 +2637,7 @@ button.swiper-pagination-bullet {
     right: 10px;
   }
 
-  .header .inner .header__menu .header__logo {
+  .header .inner .header__menu .header__logo-img {
     max-width: 80px;
   }
 
@@ -2944,7 +2944,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 95px;
   }
 
-  .header .inner .header__menu .header__logo {
+  .header .inner .header__menu .header__logo-img {
     max-width: 60px;
   }
 
@@ -3129,9 +3129,14 @@ button.swiper-pagination-bullet {
     display: block;
     visibility: visible;
     margin-top: 12px;
+    z-index: 100;
   }
 
   .header .inner .header__menu .header__logo {
+    z-index: 100;
+  }
+
+  .header .inner .header__menu .header__logo-img {
     max-width: 70px;
   }
 
@@ -3180,6 +3185,10 @@ button.swiper-pagination-bullet {
 
   .header .inner .header__menu .menu__item-link {
     font-size: 24px;
+  }
+
+  .small__container img {
+    z-index: 100;
   }
 
   .secondary__header {
