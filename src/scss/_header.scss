@@ -25,13 +25,12 @@
         padding: 5px 0 10px 0;
       }
 
-      // todo rename
       .nav__link {
         font-size: 15px;
         line-height: 15px;
         color: $primary;
       }
-      // todo rename
+
       .city__location-mobile {
         display: none;
         padding: 5px 30px 5px 20px;
@@ -46,6 +45,7 @@
           display: block;
           visibility: visible;
           margin-top: 12px;
+          z-index: 100;
         }
 
         &::after {
@@ -68,16 +68,21 @@
           }
         }
       }
-
       .header__logo {
-        @media (max-width: $breakpoint1024) {
-          max-width: 80px;
-        }
-        @media (max-width: $breakpoint768) {
-          max-width: 60px;
-        }
         @media (max-width: $breakpoint600) {
-          max-width: 70px;
+          z-index: 100;
+        }
+
+        &-img {
+          @media (max-width: $breakpoint1024) {
+            max-width: 80px;
+          }
+          @media (max-width: $breakpoint768) {
+            max-width: 60px;
+          }
+          @media (max-width: $breakpoint600) {
+            max-width: 70px;
+          }
         }
       }
 
@@ -174,6 +179,10 @@
 
   img {
     display: none;
+
+    @media (max-width: $breakpoint600) {
+      z-index: 100;
+    }
   }
 }
 
