@@ -3286,6 +3286,10 @@ button.swiper-pagination-bullet {
     padding: 15px 15px 90px 15px;
   }
 
+  .news .container .image-slider {
+    padding: 0 10px;
+  }
+
   .connect .main__title {
     margin-bottom: 30px;
   }
