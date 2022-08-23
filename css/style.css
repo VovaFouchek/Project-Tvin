@@ -124,26 +124,6 @@ section {
   margin-bottom: 170px;
 }
 
-@-webkit-keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .header {
   position: sticky;
   top: 0;
@@ -1539,8 +1519,36 @@ footer .inner .copyright {
   color: #fff;
 }
 
+.payment {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.payment__link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.payment__text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #424242;
+  margin-left: 15px;
+}
+
 .accordion .accordion__item {
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: 1px solid #424242;
 }
 
 .accordion .accordion__item.accordion__item-active .accordion__item-content {
@@ -1585,7 +1593,7 @@ footer .inner .copyright {
   font-size: 24px;
   line-height: 30px;
   color: #424242;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 .accordion .accordion__item .accordion__item-trigger .trigger__img {
@@ -1636,6 +1644,19 @@ footer .inner .copyright {
 
 .accordion .accordion__item .accordion__item-content .content__text:first-child {
   margin-top: 0;
+}
+
+.contract {
+  margin-top: 40px;
+}
+
+.contract p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #424242;
 }
 
 /**
@@ -2817,12 +2838,8 @@ button.swiper-pagination-bullet {
   }
 
   footer .elipse {
-    max-width: 450px;
+    max-width: 460px;
     background-size: contain;
-  }
-
-  footer .elipse {
-    max-width: 375px;
   }
 
   footer .inner {
@@ -2861,6 +2878,11 @@ button.swiper-pagination-bullet {
   footer .inner .copyright {
     font-size: 17px;
     line-height: 23px;
+  }
+
+  .accordion .accordion__item .accordion__item-trigger .trigger__text {
+    font-size: 20px;
+    line-height: 27px;
   }
 }
 
@@ -3105,6 +3127,23 @@ button.swiper-pagination-bullet {
 
   footer .inner .copyright {
     margin-top: 15px;
+  }
+
+  .payment .main__title {
+    line-height: 34px;
+  }
+
+  .accordion .accordion__item .accordion__item-trigger {
+    padding: 10px 0;
+  }
+
+  .contract .main__title {
+    line-height: 34px;
+  }
+
+  .contract p {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
@@ -3422,6 +3461,11 @@ button.swiper-pagination-bullet {
 
   .connect .container .item .btn {
     margin-bottom: 220px;
+  }
+
+  .accordion .accordion__item .accordion__item-trigger .trigger__text {
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 

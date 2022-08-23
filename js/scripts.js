@@ -36,8 +36,7 @@ function burgerMenu() {
 }
 burgerMenu();
 
-// ! Fixed nav
-
+// ! Fixed header
 function fixedHeaderFunc() {
   let breakpoint = window.screen.width;
   const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
@@ -188,7 +187,6 @@ const readMoreLess = function () {
 readMoreLess();
 
 // ! Tabs in Tariff section
-
 function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'flex') {
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
@@ -230,7 +228,6 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content', 'active');
 
 // ! Toogle menu
-
 function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);
@@ -295,25 +292,6 @@ if (window.screen.width > 600) {
   tooglePopUp('.technical__support-mobile', '.support', '.support__close');
 }
 
-// // Аккордеон
-function accordion() {
-  const items = document.querySelectorAll('.accordion__item-trigger');
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const parent = item.parentNode;
-      if (parent.classList.contains('accordion__item-active')) {
-        parent.classList.remove('accordion__item-active');
-      } else {
-        document
-          .querySelectorAll('.accordion__item')
-          .forEach(child => child.classList.remove('accordion__item-active'));
-        parent.classList.add('accordion__item-active');
-      }
-    });
-  });
-}
-accordion();
-;
 /**
  * Swiper 8.2.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
