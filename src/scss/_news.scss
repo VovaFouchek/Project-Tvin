@@ -6,6 +6,10 @@
   .container {
     position: relative;
     .image-slider {
+      @media (max-width: $breakpoint600) {
+        padding: 0 10px;
+      }
+
       &__wrapper {
         padding-bottom: 90px;
 
