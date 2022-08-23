@@ -34,11 +34,8 @@ footer {
     z-index: 1;
 
     @media (max-width: $breakpoint1024) {
-      max-width: 450px;
+      max-width: 460px;
       background-size: contain;
-    }
-    @media (max-width: $breakpoint1024) {
-      max-width: 375px;
     }
   }
 

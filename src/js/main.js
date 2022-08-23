@@ -35,8 +35,7 @@ function burgerMenu() {
 }
 burgerMenu();
 
-// ! Fixed nav
-
+// ! Fixed header
 function fixedHeaderFunc() {
   let breakpoint = window.screen.width;
   const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
@@ -187,7 +186,6 @@ const readMoreLess = function () {
 readMoreLess();
 
 // ! Tabs in Tariff section
-
 function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'flex') {
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
@@ -229,7 +227,6 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content', 'active');
 
 // ! Toogle menu
-
 function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);

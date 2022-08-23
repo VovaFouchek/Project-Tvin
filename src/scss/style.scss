@@ -3,7 +3,7 @@
 @import './reset';
 @import './global';
 
-// Sections or Pages SCSS-files imports
+// Sections imports
 @import './header';
 @import './banner';
 @import './about';
@@ -15,8 +15,9 @@
 
 @import './footer';
 
-// Pages
+// Pages SCSS-files imports
 @import './payment';
+@import './contract';
 
 // Libs
 @import './library/swiper';
