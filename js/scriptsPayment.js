@@ -1,4 +1,4 @@
-// ! Mobile menu burger
+// Custom Scripts for Payment page
 function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu__list');
@@ -35,7 +35,6 @@ function burgerMenu() {
 }
 burgerMenu();
 
-// ! Fixed header
 function fixedHeaderFunc() {
   let breakpoint = window.screen.width;
   const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
@@ -56,7 +55,6 @@ function fixedHeaderFunc() {
 }
 fixedHeaderFunc();
 
-// ! Accordion
 function accordion() {
   const items = document.querySelectorAll('.accordion__item-trigger');
   items.forEach(item => {
@@ -75,7 +73,6 @@ function accordion() {
 }
 accordion();
 
-// ! Toogle menu
 function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);
@@ -139,4 +136,3 @@ if (window.screen.width > 600) {
   tooglePopUp('.city__location-mobile', '.geo', '.geo__close');
   tooglePopUp('.technical__support-mobile', '.support', '.support__close');
 }
-;

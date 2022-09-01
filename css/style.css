@@ -1646,17 +1646,67 @@ footer .inner .copyright {
   margin-top: 0;
 }
 
-.contract {
-  margin-top: 40px;
+.form {
+  margin: 50px 0 60px;
 }
 
-.contract p {
-  font-family: "Source Sans Pro", sans-serif;
+.form__wrap {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 35px;
+  -webkit-box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.2);
+}
+
+.form__title {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 43px;
   color: #424242;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form #contact-method {
+  background: url(../img/small_arrow.svg) no-repeat right #f3f3f3;
+  background-position-x: calc(100% - 20px);
+}
+
+.form input,
+.form select {
+  background: #f3f3f3;
+  border: 0.3px solid #000000;
+  border-radius: 40px;
+  padding: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #8e8e8e;
+  margin-bottom: 30px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline-color: #6c5fff;
+}
+
+.form .btn {
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 /**
@@ -2633,6 +2683,11 @@ button.swiper-pagination-bullet {
     max-width: 205px;
     padding: 40px 25px;
   }
+
+  .form .btn {
+    padding: 16px 70px;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3136,15 +3191,6 @@ button.swiper-pagination-bullet {
   .accordion .accordion__item .accordion__item-trigger {
     padding: 10px 0;
   }
-
-  .contract .main__title {
-    line-height: 34px;
-  }
-
-  .contract p {
-    font-size: 18px;
-    line-height: 26px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -3336,6 +3382,33 @@ button.swiper-pagination-bullet {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+  }
+
+  .form__wrap {
+    max-width: 420px;
+    padding: 30px 20px;
+  }
+
+  .form__title {
+    font-size: 28px;
+    line-height: 37px;
+    margin-bottom: 40px;
+  }
+
+  .form #contact-method {
+    background-size: 24px;
+  }
+
+  .form input,
+  .form select {
+    font-size: 16px;
+    margin-bottom: 27px;
+  }
+
+  .form .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 

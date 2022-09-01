@@ -1,5 +1,4 @@
-// Custom Scripts
-// ! Mobile menu burger
+// Custom Scripts for Main page
 function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu__list');
@@ -36,7 +35,6 @@ function burgerMenu() {
 }
 burgerMenu();
 
-// ! Fixed header
 function fixedHeaderFunc() {
   let breakpoint = window.screen.width;
   const getHeigthHeader = () => (window.screen.width >= 1024 ? (breakpoint = 45) : (breakpoint = 34));
@@ -57,7 +55,6 @@ function fixedHeaderFunc() {
 }
 fixedHeaderFunc();
 
-// ! Readmore
 const readMoreLess = function () {
   if (!Element.prototype.closest) {
     if (!Element.prototype.matches) {
@@ -227,7 +224,6 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
 // FOURTH argument is the activity class that will be added for the currently active tab.
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content', 'active');
 
-// ! Toogle menu
 function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector) {
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);
@@ -291,6 +287,7 @@ if (window.screen.width > 600) {
   tooglePopUp('.city__location-mobile', '.geo', '.geo__close');
   tooglePopUp('.technical__support-mobile', '.support', '.support__close');
 }
+
 
 /**
  * Swiper 8.2.4
