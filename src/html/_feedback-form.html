@@ -1,0 +1,27 @@
+<section class="form">
+    <div class="inner">
+        <div class="form__wrap">
+            <h1 class="form__title">Залиште заявку на підключення</h1>
+            <form action="/" method="post" required>
+
+                <input id="name" type="text" name="username" placeholder="Введіть прізвище та ім’я" required
+                    autofocus="" max="50" />
+                <input id="address" type="text" name="address" placeholder="Введіть адресу проживання" required
+                    max="100" />
+
+                <select name="select" id="contact-method" required>
+                    <option value="" disabled selected>Оберіть спосіб зв'язку</option>
+                    <option value="viber">Viber</option>
+                    <option value="telegram">Telegram</option>
+                    <option value="email">Пошта</option>
+                    <option value="other">Інше</option>
+                </select>
+
+                <input id="contact" type="text" name="contact" placeholder="Введіть ваші контактні дані" required
+                    autofocus="" max="50" />
+                <button id="btn" class="btn" type="submit">Хочу підключитись</button>
+
+            </form>
+        </div>
+    </div>
+</section>
