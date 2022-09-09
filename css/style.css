@@ -1524,6 +1524,10 @@ footer .inner .copyright {
   margin-bottom: 60px;
 }
 
+.payment .inner {
+  padding: 0 15px;
+}
+
 .payment__link {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1534,14 +1538,18 @@ footer .inner .copyright {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.payment__link:last-of-type {
+  margin-bottom: 5px;
 }
 
 .payment__text {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 30px;
   color: #424242;
   margin-left: 15px;
@@ -1582,10 +1590,6 @@ footer .inner .copyright {
   cursor: pointer;
 }
 
-.accordion .accordion__item .accordion__item-trigger .trigger__num {
-  margin-right: 10px;
-}
-
 .accordion .accordion__item .accordion__item-trigger .trigger__text {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
@@ -1593,7 +1597,7 @@ footer .inner .copyright {
   font-size: 24px;
   line-height: 30px;
   color: #424242;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .accordion .accordion__item .accordion__item-trigger .trigger__img {
