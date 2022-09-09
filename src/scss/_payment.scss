@@ -2,6 +2,10 @@
   margin-top: 50px;
   margin-bottom: 60px;
 
+  .inner {
+    padding: 0 15px;
+  }
+
   .main__title {
     @media (max-width: $breakpoint768) {
       line-height: 34px;
@@ -12,14 +16,18 @@
     width: fit-content;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
   }
 
   &__text {
     font-family: $fontRegularText;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 30px;
     color: $primary;
     margin-left: 15px;
@@ -56,10 +64,6 @@
         padding: 10px 0;
       }
 
-      .trigger__num {
-        margin-right: 10px;
-      }
-
       .trigger__text {
         font-family: $fontRegularText;
         font-style: normal;
@@ -67,7 +71,7 @@
         font-size: 24px;
         line-height: 30px;
         color: $primary;
-        margin: 0 10px;
+        margin: 0 15px;
 
         @media (max-width: $breakpoint1024) {
           font-size: 20px;
