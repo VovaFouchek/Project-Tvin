@@ -20,9 +20,7 @@
     <meta property="og:image" content="https://vovafouchek.github.io/Project-Tvin/img/banner__img.svg">
     <meta property="og:url" content="https://tvin.com.ua/">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- <meta name="robots" content="all" /> -->
-    <!-- Обов язково видалити нижній рядок -->
-    <meta name="robots" content="none" />
+    <meta name="robots" content="all" />
     <title>Tvin - Заявка на підключення</title>
     <link rel="stylesheet" href="./css/style.min.css">
 
@@ -132,7 +130,7 @@
         <!-- Navbar -->
         <nav class="header__menu" aria-label="main navigation">
             <div href="#" class="nav__link toggle city__location-mobile">Вінниця</div>
-            <a href="../index.html" class="header__logo">
+            <a href="#" class="header__logo">
                 <img src="./img/logo__menu.svg" class="header__logo-img" alt="Логотип Tvin">
             </a>
             <ul class="menu__list">
@@ -194,8 +192,23 @@
                 <input id="contact" type="text" name="contact" placeholder="Введіть ваші контактні дані" required
                     autofocus="" max="50" />
                 <button id="btn" class="btn" type="submit">Хочу підключитись</button>
-
             </form>
+
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="successPopUp">
+            <p>Дані успішно відправлено</p>
+            <img src="./img/success.svg" alt="Дані успішно відправлено">
+            <a href="#">На головну</a>
         </div>
     </div>
 </section>
