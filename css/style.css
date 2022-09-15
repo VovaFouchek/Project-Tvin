@@ -1665,6 +1665,10 @@ footer .inner .copyright {
   position: relative;
 }
 
+.form__wrap.disabled {
+  display: none;
+}
+
 .form__title {
   font-family: "Montserrat", sans-serif;
   font-style: normal;

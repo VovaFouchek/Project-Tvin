@@ -123,9 +123,9 @@ const form = document.querySelector('form');
 const inner = document.querySelector('.inner');
 const loader = document.querySelector('.lds-roller');
 const inputs = document.querySelectorAll('input');
-// const url = 'https://crm.tvin.com.ua/api/v1/website_callback';
-// const token = 'p3B2GFgbUSRT00lV7YeBf4SDEAjtcdGz';
-// const url = 'https://webhook.site/50defbeb-9263-4302-aa4b-875ec2b292cc';
+
+// need to change
+// const url = 'https://jsonplaceholder.typicode.com/post';
 
 const statusLoading = () => {
   loader.classList.add('active');
@@ -144,11 +144,11 @@ const statusFailure = () => {
 
 const statusSuccess = () => {
   loader.classList.remove('active');
-  document.querySelector('.form__wrap').remove();
   const statusSuccessMessage = document.createElement('div');
   statusSuccessMessage.classList.add('.successPopUp');
   document.querySelector('.successPopUp').classList.add('success');
   inner.appendChild(statusSuccessMessage);
+  document.querySelector('.form__wrap').classList.add('disabled');
 };
 
 const message = {
@@ -186,20 +186,23 @@ const addInfoToDatabase = async personalData => {
   const fetchData = {
     method: 'POST',
     body: JSON.stringify(personalData),
-    mode: 'no-cors',
-    headers: new Headers({ 'content-type': 'application/x-www-form-urlencoded' }),
-    // headers: new Headers({ 'content-type': 'application/x-www-form-urlencoded', 'X-Auth-Token': token }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   };
   try {
-    const response = await fetch(url, fetchData)
-      .then(response => response.json())
-      .then(message.success());
+    const response = await fetch(url, fetchData).then(response => {
+      if (response.ok) {
+        message.success();
+      } else {
+        throw new Error(error);
+      }
+    });
+    return response;
   } catch (error) {
-    console.error(error);
     message.failure();
-    setTimeout(() => {
-      document.querySelector('.status').remove();
-    }, 5000);
+    setTimeout(() => document.querySelector('.status').remove(), 5000);
+    throw new Error(error);
   } finally {
     clearValues();
   }

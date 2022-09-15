@@ -129,7 +129,7 @@
         </div>
         <!-- Navbar -->
         <nav class="header__menu" aria-label="main navigation">
-            <div href="#" class="nav__link toggle city__location-mobile">Вінниця</div>
+            <a href="#" class="nav__link toggle city__location-mobile">Вінниця</a>
             <a href="#" class="header__logo">
                 <img src="./img/logo__menu.svg" class="header__logo-img" alt="Логотип Tvin">
             </a>
@@ -174,12 +174,11 @@
     <div class="inner">
         <div class="form__wrap">
             <h2 class="form__title">Залиште заявку на підключення</h2>
-            <form action="/" method="post" required>
+            <form>
 
                 <input id="name" type="text" name="username" placeholder="Введіть прізвище та ім’я" required
-                    autofocus="" max="50" />
-                <input id="address" type="text" name="address" placeholder="Введіть адресу проживання" required
-                    max="100" />
+                    autofocus="" />
+                <input id="address" type="text" name="address" placeholder="Введіть адресу проживання" required />
 
                 <select name="select" id="contact-method" required>
                     <option value="" disabled selected>Оберіть спосіб зв'язку</option>
@@ -189,8 +188,7 @@
                     <option value="other">Інше</option>
                 </select>
 
-                <input id="contact" type="text" name="contact" placeholder="Введіть ваші контактні дані" required
-                    autofocus="" max="50" />
+                <input id="contact" type="text" name="contact" placeholder="Введіть ваші контактні дані" required />
                 <button id="btn" class="btn" type="submit">Хочу підключитись</button>
             </form>
 
