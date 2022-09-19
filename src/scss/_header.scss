@@ -70,6 +70,7 @@
       }
       .header__logo {
         @media (max-width: $breakpoint600) {
+          margin-right: 10px;
           z-index: 100;
         }
 
@@ -91,7 +92,7 @@
 
         @media (max-width: $burgerBreakpoint) {
           position: fixed;
-          background: #fff;
+          background: $white;
           left: 0;
           top: 0;
           width: 100vw;
@@ -417,7 +418,7 @@
   border-radius: 12px;
   opacity: 0;
   color: #303030;
-  background: #fff;
+  background: $white;
   visibility: hidden;
   box-shadow: 0 8px 25px rgba(48, 48, 48, 0.2);
   transition: visibility ease 1s, opacity ease 0.2s;
