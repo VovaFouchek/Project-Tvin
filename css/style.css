@@ -795,7 +795,7 @@ section {
   height: 107px;
   margin: 0 auto;
   border-radius: 26px;
-  background: #ffffff;
+  background: #fff;
   -webkit-box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.06);
           box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.06);
   -webkit-transform: rotate(45deg);
@@ -1705,12 +1705,12 @@ footer .inner .copyright {
   border: 0.3px solid #000;
   border-radius: 40px;
   padding: 20px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: #8e8e8e;
+  color: #424242;
   margin-bottom: 30px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -3420,6 +3420,7 @@ button.swiper-pagination-bullet {
   }
 
   .header .inner .header__menu .header__logo {
+    margin-right: 10px;
     z-index: 100;
   }
 
