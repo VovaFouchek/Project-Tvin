@@ -77,7 +77,6 @@ function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector)
   const hamburgerBtn = document.querySelector(hamburgerBtnSelector);
   const popUp = document.querySelector(popUpSelector);
   const closePopUpBtn = document.querySelector(closePopUpBtnSelector);
-  const techSupportBtn = document.querySelector('.technical__support-mobile');
 
   const onScrollCloseModal = () => {
     const scrollY = window.scrollY;
@@ -123,7 +122,7 @@ function tooglePopUp(hamburgerBtnSelector, popUpSelector, closePopUpBtnSelector)
     const itsHamburgerBtn = target == hamburgerBtn;
     const popUpIsActive = popUp.classList.contains('active');
 
-    if (!itsPopUp && !itsHamburgerBtn && popUpIsActive && closePopUpBtn && !techSupportBtn) {
+    if (!itsPopUp && !itsHamburgerBtn && popUpIsActive && closePopUpBtn) {
       toggleMenu();
       window.removeEventListener('scroll', onScrollCloseModal);
     }
@@ -137,12 +136,3 @@ if (window.screen.width > 600) {
   tooglePopUp('.city__location-mobile', '.geo', '.geo__close');
   tooglePopUp('.technical__support-mobile', '.support', '.support__close');
 }
-
-const linkTechSupportMobile = document.querySelector('#tech-support');
-
-linkTechSupportMobile.addEventListener('click', event => {
-  event.preventDefault();
-  const techSupportBtn = document.querySelector('.technical__support-mobile');
-  techSupportBtn.classList.toggle('active');
-  document.querySelector('.support').classList.toggle('active');
-});
