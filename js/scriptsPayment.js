@@ -145,5 +145,4 @@ linkTechSupportMobile.addEventListener('click', event => {
   const techSupportBtn = document.querySelector('.technical__support-mobile');
   techSupportBtn.classList.toggle('active');
   document.querySelector('.support').classList.toggle('active');
-  console.log(document.querySelector('.support'));
 });
