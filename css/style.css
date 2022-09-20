@@ -1529,7 +1529,9 @@ footer .inner .copyright {
 }
 
 .payment__link {
-  width: fit-conte nt;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
