@@ -1,4 +1,3 @@
-// ! Tabs in Tariff section
 function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'flex') {
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
