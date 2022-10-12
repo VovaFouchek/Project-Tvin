@@ -17,6 +17,10 @@
       background: rgba(255, 255, 255, 0.62);
       box-shadow: inset 0px 3px 12px 1px rgba(0, 0, 0, 0.1);
 
+      &.one__indicator {
+        box-shadow: none;
+      }
+
       @media (max-width: $breakpoint768) {
         max-width: 300px;
       }
@@ -56,6 +60,21 @@
       &:last-child {
         justify-content: center;
         gap: 80px;
+      }
+
+      // checking, if tariff block has 4 blocks
+      &:has(.item:nth-child(4)) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 808px;
+        gap: 45px;
+      }
+      @media (max-width: $breakpoint1235) {
+        &:has(.item:nth-child(4)) {
+          justify-content: center;
+          gap: 80px;
+        }
       }
 
       @media (max-width: $breakpoint880) {
@@ -102,6 +121,10 @@
 
       &:nth-child(3) {
         border: 2px solid rgba(181, 74, 65, 0.7);
+      }
+
+      &:nth-child(4) {
+        border: 2px solid rgb(181 74 65);
       }
 
       h3 {
