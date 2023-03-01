@@ -4,7 +4,7 @@ const loader = document.querySelector('.lds-roller');
 const inputs = document.querySelectorAll('input');
 
 // need to change
-// const url = 'https://jsonplaceholder.typicode.com/post';
+const url = '/post';
 
 const statusLoading = () => {
   loader.classList.add('active');
